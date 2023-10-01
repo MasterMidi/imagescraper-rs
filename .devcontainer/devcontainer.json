@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
+{
+	"name": "imagescraper-rs",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye"
+	"build": {
+		"dockerfile": "dockerfile",
+		"args": {
+			"CONTAINER_USER": "dev",
+			"CONTAINER_GROUP": "dev"
+		}
+	},
+	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
+	"mounts": [
+		{
+			"source": "devcontainer-cargo-cache-${devcontainerId}",
+			"target": "/usr/local/cargo",
+			"type": "volume"
+		}
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [
+	// 	3000,
+	// 	3001
+	// ],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "rustc --version",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"serayuzgur.crates",
+				"yzhang.markdown-all-in-one",
+				"ms-azuretools.vscode-docker",
+				"panicbit.cargo",
+				"GitHub.copilot",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"christian-kohler.path-intellisense",
+				"belfz.search-crates-io",
+				"sidp.strict-whitespace",
+				"Gruntfuggly.todo-tree",
+				"EditorConfig.EditorConfig",
+				"eamodio.gitlens",
+				"actboy168.tasks",
+				"naumovs.color-highlight",
+				"vadimcn.vscode-lldb",
+				"mcu-debug.debug-tracker-vscode",
+				"albert.TabOut",
+				"ms-vscode.test-adapter-converter",
+				"Swellaby.vscode-rust-test-adapter"
+			]
+		}
+	}
+}
